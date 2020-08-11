@@ -13,9 +13,11 @@ class Artist
   def self.all
     @@all
   end
-def add_song(song)
+  
+  def add_song(song)
     @songs << song
   end
+  
   def self.create(name)
     artist = self.new(name)
     artist.name = name
