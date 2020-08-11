@@ -8,7 +8,7 @@ class Artist
   end 
   
   def add_song(song)
-    self.songs << song
+    songs << song
   end 
   
   def save
@@ -16,7 +16,7 @@ class Artist
   end 
   
   def self.all
-    @all
+    @@all
   end 
   
  def self.find_or_create_by_name(name)
