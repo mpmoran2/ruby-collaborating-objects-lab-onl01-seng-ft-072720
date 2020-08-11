@@ -5,7 +5,7 @@ class Song
 
   def initialize(name)
     @name = name
-    @songs = []
+    @@all << name
   end
 
   def self.new_by_filename(file)
