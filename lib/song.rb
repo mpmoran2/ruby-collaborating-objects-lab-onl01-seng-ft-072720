@@ -14,9 +14,4 @@ class Song
     artist.add_song(song)
     song
   end
-  
-  def self.all 
-    @@all 
-  end 
-  
- end
+end
