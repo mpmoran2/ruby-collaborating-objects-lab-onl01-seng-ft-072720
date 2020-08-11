@@ -13,7 +13,9 @@ class Artist
   def self.all
     @@all
   end
-
+def add_song(song)
+    @songs << song
+  end
   def self.create(name)
     artist = self.new(name)
     artist.name = name
@@ -28,9 +30,7 @@ class Artist
     self.find(name) || self.create(name)
   end
 
-  def add_song(song)
-    @songs << song
-  end
+  
 
   def print_songs
     songs.each { |song| puts song.name }
