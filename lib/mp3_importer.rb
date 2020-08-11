@@ -2,17 +2,14 @@ class MP3Importer
   attr_accessor :path
 
   def initialize(path)
-    @path = filepath
+    @path = path
   end
 
   def files
-      @files = Dir.entries(@path)
-      @files.delete_if {|file| file == "." || file == ".."}
-    end
+    Dir[@path+"/*.mp3"].map { |file| file.split("/").last }
+  end
 
   def import
-      self.files.each do |file| 
-        song = Song.new_by_filename(file)
-        Artist.all << song.artist unless Artist.all.include?(song.artist)
+    files.each { |file| Song.new_by_filename(file) }
   end
-end
+end 
